@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<display-name>EmployeeManagement</display-name>
+<welcome-file-list>
+    <welcome-file>/HTML/index.html</welcome-file>
+</welcome-file-list>
+<context-param>
+    <param-name>name</param-name>
+    <param-value>Mayukh</param-value>
+</context-param>
+<servlet>
+    <servlet-name>Registration</servlet-name>
+    <servlet-class>com.yourPackageName.yourServletName</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Registration</servlet-name>
+    <url-pattern>/EmployeeManagement/WebContent/Registration</url-pattern>
+</servlet-mapping>
+</web-app>
