@@ -26,7 +26,7 @@ public class MainClass {
 		}
 		
 		db = mongo.getDB("testdb");
-		table = db.getCollection("testColl");
+		table = db.getCollection("loginCredentials");
 		
 		table.drop();
 		
@@ -36,7 +36,7 @@ public class MainClass {
 			System.out.println(dbset);
 		}
 		
-		db = mongo.getDB("local");
+		db = mongo.getDB("testdb");
 		Set<String> tables = db.getCollectionNames();
 		
 		for (String coll: tables){
@@ -44,22 +44,32 @@ public class MainClass {
 		}
 		
 		BasicDBObject basicDBObject = new BasicDBObject();
-		basicDBObject.put("name", "Shauktik");
-		basicDBObject.put("Age", "27");
+		
+		db.createCollection("loginCredentials17", basicDBObject);
+		
 		
 		BasicDBObject basicDBObject2 = new BasicDBObject();
-		basicDBObject.put("name", "Mayukh");
-		basicDBObject.put("Age", "27");
+		basicDBObject2.put("userName", "Shauktik");
+		basicDBObject2.put("password", "Shauktik123");
 		
-		table.insert(basicDBObject);
-		table.insert(basicDBObject2);
+		BasicDBObject basicDBObject3 = new BasicDBObject();
+		basicDBObject3.put("userName", "Mayukh");
+		basicDBObject3.put("password", "Mayukh123");
 		
-		BasicDBObject searchQuery = new BasicDBObject();
+		db.getCollection("loginCredentials17").insert(basicDBObject2);
+		db.getCollection("loginCredentials17").insert(basicDBObject3);
+		
+		System.out.println(db.getCollection("loginCredentials17").getCount());
+		
+		/*BasicDBObject searchQuery = new BasicDBObject();
+		
+		searchQuery.put("userName", "");
+		searchQuery.put("password", "");
 		DBCursor cursor = table.find(searchQuery);
 		
 		while (cursor.hasNext()){
 			System.out.println(cursor.next());
-		}
+		}*/
 		
 	}
 
