@@ -206,18 +206,21 @@ window.fbAsyncInit = function() {
       <span class="close">×</span>
       <h2>Sign in</h2>
     </div>
+    <form>
     <div class="modal-body">
-      <input type="text" id="userName"/>User Name
-      <input type="password" id="password"/>Password
-      <button class="btn btn-success" id="submitButtonModal">Submit</button>
-    </div>
+      <input type="text" id="userName" placeholder="userName"/>User Name
+      <input type="password" id="password" placeholder="userName"/>Password
+      <input type="button" class="btn btn-success" id="submitButtonModal" value="Submit"></input>
+    </div></form>
     
       
       
     </div>
   </div>
 
-</div>  
+</div> 
+<div id="ajaxGetUserServletResponse"></div>
+ 
         <hr>
 
         <!-- Footer -->
@@ -237,6 +240,7 @@ window.fbAsyncInit = function() {
 
 <div id="status">
 </div>  
+<div id="map_canvas" style="width: 500px; height: 300px; position: relative; background-color: rgb(229, 227, 223);"></div>
 
     
     <script src="js/jquery.js"></script>
@@ -244,7 +248,15 @@ window.fbAsyncInit = function() {
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ModalToSignIn.js"></script>
-    
+    <script src="js/main.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var latlng = new google.maps.LatLng(-34.39790, 150.64405);
+            var myOptions = { zoom: 18, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions); 
+        }); 
+    </script>
 
 </body>
 
