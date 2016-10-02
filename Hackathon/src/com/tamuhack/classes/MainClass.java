@@ -48,15 +48,15 @@ public class MainClass {
 		db.createCollection("loginCredentials17", basicDBObject);
 		
 		
-		BasicDBObject basicDBObject2 = new BasicDBObject();
-		basicDBObject2.put("userName", "Shauktik");
-		basicDBObject2.put("password", "Shauktik123");
+		BasicDBObject basicDBObject22 = new BasicDBObject();
+		basicDBObject22.put("userName", "Shauktik");
+		basicDBObject22.put("password", "Shauktik123");
 		
 		BasicDBObject basicDBObject3 = new BasicDBObject();
 		basicDBObject3.put("userName", "Mayukh");
 		basicDBObject3.put("password", "Mayukh123");
 		
-		db.getCollection("loginCredentials17").insert(basicDBObject2);
+		db.getCollection("loginCredentials17").insert(basicDBObject22);
 		db.getCollection("loginCredentials17").insert(basicDBObject3);
 		
 		System.out.println(db.getCollection("loginCredentials17").getCount());

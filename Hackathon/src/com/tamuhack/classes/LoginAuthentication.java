@@ -53,13 +53,13 @@ public class LoginAuthentication {
 		
 		DBObject obj = table.findOne(searchQuery);
 	
-		boolean setValue = false;
+		boolean setVal = false;
 		
 		if (obj!=null){
 			System.out.println("In if");
 			
 				System.out.println("Object::"+obj.toString());
-				setValue = true;
+				setVal = true;
 			
 			
 		}
@@ -67,7 +67,7 @@ public class LoginAuthentication {
 			System.out.println("Else Block");
 		}
 	
-		return setValue;
+		return setVal;
 	}
 
 	
